@@ -1,30 +1,24 @@
 import React from 'react'
 import Services from './components/services/Services'
-import firebaseApp from './firebase/firebaseConfig'
-import { getFirestore, collection, doc, setDoc, getDocs } from "firebase/firestore";
+import Navbar from './components/navbar/Navbar';
+import Calculator from './components/Calculator/Calculator';
 
 
-const fetchFirebase = async () => {
-  const db = getFirestore(firebaseApp);
-  // Traemos la coleccion de la base de datos
-  const querySnapshot = await getDocs(collection(db, "servicios"));
-  const services = querySnapshot.docs.map((doc) => doc.data());
-
+const dolarValue = async () => {
+  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
+  const data = await DolarValue.json()
+  return data
 }
-
-
 
 
 
 const HomePage = async () => {
 
-  const db = await fetchFirebase()
-
-
+  const CotizeDolar = await dolarValue()
 
   return (
     <>
-
+      <Navbar />
       <div
         className='flex flex-col  justify-center min-h-screen py-2 bg-black'
       >
@@ -32,22 +26,16 @@ const HomePage = async () => {
           Calculadora de impuestos digitales para Argentina.
         </h1>
       </div>
+
+      <div className='flex flex-col items-center justify-center py-5 bg-white'>
+        <Calculator CotizeDolar={CotizeDolar} />
+      </div>
+
       <div
         className='flex flex-col items-center justify-center py-5 bg-white'
       >
-        <h1
-          className='text-4xl font-bold text-black mt-5 mb-5'
-        >
-          Streaming
-        </h1>
-        <Services />
-        <h1
-          className='text-4xl font-bold text-black mt-5 mb-5'
-        >
-          Musica
-        </h1>
+        <Services CotizeDolar={CotizeDolar} />
       </div>
-
     </>
 
   )
