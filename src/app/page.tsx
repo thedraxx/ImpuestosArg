@@ -20,11 +20,16 @@ const HomePage = async () => {
     <>
       <Navbar />
       <div
-        className='flex flex-col  justify-center min-h-screen py-2 bg-black'
+        className='flex flex-col justify-center min-h-screen py-2 bg-black'
       >
-        <h1 className='text-6xl font-bold text-white ml-20 w-96'>
-          Calculadora de impuestos digitales para Argentina.
-        </h1>
+        <div
+          className='flex  w-auto'
+        >
+          <span className='type'>
+            Calculadora de impuestos digitales para Argentina.
+          </span>
+        </div>
+
       </div>
 
       <div className='flex flex-col items-center justify-center py-5 bg-white'>

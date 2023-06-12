@@ -25,7 +25,9 @@ const Calculator = ({ CotizeDolar }: ServicesProps) => {
 
     return (
         <div className="flex flex-col items-center justify-center py-5 bg-white rounded-xl w-96">
-            <h1 className="md:text-3xl text-md text-center text-black font-bold">
+            <h1
+                className="md:text-3xl text-md text-center text-black font-bold"
+            >
                 Calculadora de impuestos digitales para Argentina.
             </h1>
 
@@ -118,9 +120,13 @@ const Calculator = ({ CotizeDolar }: ServicesProps) => {
                 </h2>
 
                 {isDolarActive ? (
-                    <h2>Total con Impuestos: AR$ {price! + price! * ImpuestoPais + price! * ImpuestoGanancias}</h2>
+                    <h2
+                        className="text-xl text-black"
+                    >Total con Impuestos: AR$ {price! + price! * ImpuestoPais + price! * ImpuestoGanancias}</h2>
                 ) : (
-                    <h2>
+                    <h2
+                        className="text-xl text-black"
+                    >
                         Total con Impuestos: AR$
                         {price! * CotizeDolar.oficial.value_buy + price! * CotizeDolar.oficial.value_buy * ImpuestoPais + price! * CotizeDolar.oficial.value_buy * ImpuestoGanancias}
                     </h2>
