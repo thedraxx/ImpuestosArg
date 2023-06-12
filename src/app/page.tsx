@@ -22,7 +22,7 @@ const HomePage = async () => {
       <div
         className='flex flex-col  justify-center min-h-screen py-2 bg-black'
       >
-        <h1 className='text-6xl font-bold text-white'>
+        <h1 className='text-6xl font-bold text-white ml-20 w-96'>
           Calculadora de impuestos digitales para Argentina.
         </h1>
       </div>

@@ -16,3 +16,18 @@
   }
 }
 
+body{
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(var(--background-start-rgb), 1) 0%, rgba(var(--background-end-rgb), 1) 100%);
+  color: rgb(var(--foreground-rgb));
+  cursor: none;
+}
+
+
+
+@media  only screen and (max-width: 1200px) {
+  body {
+      cursor: pointer;
+  }
+}   
+

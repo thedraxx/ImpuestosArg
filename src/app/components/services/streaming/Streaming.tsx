@@ -61,7 +61,7 @@ const Streaming = ({ item, CotizeDolar }: any) => {
                                         key={price}
                                         className='text-md font-bold text-white text-center mt-3.5'
                                     >
-                                        aa ${price}
+                                        ${price}
                                     </h1>
                                 )
                             }
