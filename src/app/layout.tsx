@@ -1,6 +1,7 @@
 import CustomPointer from './components/Pointer/CustomPointer'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from './components/navbar/Navbar'
 
 export const dolarValue = async () => {
   const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <CustomPointer />
+        <Navbar />
         {children}
       </body>
     </html>

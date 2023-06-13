@@ -9,7 +9,6 @@ const HomePage = async () => {
   const CotizeDolar = await dolarValue()
   return (
     <>
-      <Navbar />
       <div
         className='flex flex-col justify-center min-h-screen py-2 bg-black'
       >
