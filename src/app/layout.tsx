@@ -1,13 +1,7 @@
 import CustomPointer from './components/Pointer/CustomPointer'
+import Navbar from './components/navbar/Navbar'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from './components/navbar/Navbar'
-
-export const dolarValue = async () => {
-  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
-  const data = await DolarValue.json()
-  return data
-}
 
 const inter = Inter({ subsets: ['latin'] })
 

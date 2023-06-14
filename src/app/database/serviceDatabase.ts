@@ -1,7 +1,11 @@
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import firebaseApp from '@/app/firebase/firebaseConfig';
-import { dolarValue } from "../layout";
 
+const dolarValue = async () => {
+    const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
+    const data = await DolarValue.json()
+    return data
+  }
 
 const fetchFirebase = async () => {
     const db = getFirestore(firebaseApp);
@@ -11,7 +15,6 @@ const fetchFirebase = async () => {
 }
 
 export const Servicios = async () => {
-    const fetchData = await fetchFirebase()
     const dolar = await dolarValue()
 
     const ImpuestoPais = 0.30
@@ -37,12 +40,67 @@ export const Servicios = async () => {
             "name": "Disney +",
             "plans": [
                 {
-                   "individual": 799 * dolar.oficial.value_buy,
-                   "Combo Star + Disney +": 1999 * dolar.oficial.value_buy,
-                   "Combo Star + Disney + LIONSGATE +": 2399 * dolar.oficial.value_buy,
+                   "individual": 799 ,
+                   "Combo Star + Disney +": 1999,
+                   "Combo Star + Disney + LIONSGATE +": 2399,
                 },
             ],
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1200px-Disney_wordmark.svg.png",
+        },
+        {
+            "id": 3,
+            "name": "Star +",
+            "plans": [
+                {
+                   "individual": 1749 ,
+                   "Combo Star + Disney +": 1999 ,
+                   "Combo Star + Disney + LIONSGATE +": 2399,
+                },
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Star%2B_logo.svg/2560px-Star%2B_logo.svg.png",
+        },
+        {
+            "id": 4,
+            "name": "Apple TV",
+            "plans": [
+                {
+                   "individual":  ((ImpuestoGanancias + ImpuestoPais )* (6.99 * dolar.oficial.value_buy)) + (6.99 * dolar.oficial.value_buy) ,
+                },
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/2560px-Apple_TV_Plus_Logo.svg.png",
+        },
+        {
+            "id": 5,
+            "name": "Amazon Prime Video",
+            "plans": [
+                {
+                    "individual":  ((ImpuestoPais + ImpuestoGanancias) * (580)) + 580,
+                },
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/2560px-Amazon_Prime_Video_logo.svg.png",
+        },
+        {
+            "id": 5,
+            "name": "Netflix",
+            "plans": [
+                {
+                    "Basic":  ((ImpuestoPais + ImpuestoGanancias) * (999)) + 999,
+                    "Standard":  ((ImpuestoPais + ImpuestoGanancias) * (1699)) + 1699,
+                    "Premium":  ((ImpuestoPais + ImpuestoGanancias) * (2399)) + 2399,
+                },
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/2560px-Netflix_logo.svg.png",
+        },
+        {
+            "id": 6,
+            "name": "HBO Max",
+            "plans": [
+                {
+                    "Movil":  ((ImpuestoPais + ImpuestoGanancias) * (389)) + 389,
+                    "Standard":  ((ImpuestoPais + ImpuestoGanancias) * (699)) + 699,
+                },
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/2560px-HBO_Max_Logo.svg.png",
         },
     ]
 }

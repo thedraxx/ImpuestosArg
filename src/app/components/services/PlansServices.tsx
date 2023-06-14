@@ -3,7 +3,7 @@ import React from 'react'
 const PlansServices = ({ plan }: any) => {
     return (
         <div
-            className='flex flex-1 flex-col justify-between items-center bg-white w-96  '
+            className='flex flex-1 flex-col justify-between items-center w-96  '
             key={plan.id}
         >
             {
@@ -14,13 +14,13 @@ const PlansServices = ({ plan }: any) => {
                             key={key}
                         >
                             <h1
-                                className='text-md font-bold text-blue-500 text-center'
+                                className='text-lg mt-5 w-64 text-left font-bold text-lightBlack '
                             >
                                 {key}
 
                             </h1>
                             <h1
-                                className='text-md font-bold text-lightBlack text-center'
+                                className='text-lg mt-5 font-bold text-lightBlack text-center'
                             >
                                 ${plan[key]}
                             </h1>

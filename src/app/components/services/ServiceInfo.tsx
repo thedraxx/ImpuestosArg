@@ -11,7 +11,7 @@ const ServiceInfo = ({ item }: any) => {
         <>
             <div
                 key={item.id}
-                className='flex flex-1 flex-row justify-between items-center bg-white w-96  '
+                className='flex flex-1 flex-row justify-between items-center  w-96 h-96 '
             >
                 <Image
                     src={item.image}
@@ -35,7 +35,7 @@ const ServiceInfo = ({ item }: any) => {
             {
                 isOpen ? (
                     <div
-                        className='flex flex-1 flex-col justify-between items-center bg-white w-96'
+                        className='flex flex-1 flex-col justify-between items-center w-96'
                     >
                         {
                             item.plans.map((plan: any) => {

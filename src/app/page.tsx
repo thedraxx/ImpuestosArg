@@ -1,9 +1,12 @@
-"use client"
 import React from 'react'
-import Navbar from './components/navbar/Navbar';
 import Calculator from './components/Calculator/Calculator';
-import { dolarValue } from './layout';
 import Link from 'next/link';
+
+const dolarValue = async () => {
+  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
+  const data = await DolarValue.json()
+  return data
+}
 
 const HomePage = async () => {
   const CotizeDolar = await dolarValue()

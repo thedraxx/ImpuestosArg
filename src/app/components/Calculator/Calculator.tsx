@@ -1,6 +1,7 @@
 "use client";
 import { Dolar } from '@/app/interface/iDolarValue';
-import React, { useState } from 'react'
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 
 interface ServicesProps {
     CotizeDolar: Dolar
@@ -11,6 +12,15 @@ const Calculator = ({ CotizeDolar }: ServicesProps) => {
     const [price, setPrice] = useState<number | null>(null)
     const [open, setOpen] = useState(false)
     const [isDolarActive, setIsDolarActive] = useState(true);
+    const redirect = useRouter()
+
+    useEffect(() => {
+        if (price! > 100000) {
+            redirect.push('/error')
+        }
+    }, [price])
+
+
 
     const ImpuestoPais = 0.3
     const ImpuestoGanancias = 0.45
@@ -98,34 +108,34 @@ const Calculator = ({ CotizeDolar }: ServicesProps) => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center py-5 bg-white">
-                <h2 className="text-xl text-black">
+            <div className="flex flex-col items-center justify-center py-5 bg-white w-96">
+                <h2 className="text-md text-black">
                     Cotizacion Dolar Oficial: AR$ {CotizeDolar.oficial.value_buy}
                 </h2>
 
                 {isDolarActive ? (
-                    <h2 className="text-xl text-black">Sin impuestos: AR$ {price}</h2>
+                    <h2 className="text-md text-black">Sin impuestos: AR$ {price}</h2>
                 ) : (
-                    <h2 className="text-xl text-black">
+                    <h2 className="text-md text-black">
                         Sin impuestos: AR$ {price! * CotizeDolar.oficial.value_buy}
                     </h2>
                 )}
 
-                <h2 className="text-xl text-black">
+                <h2 className="text-md text-black">
                     + Impuesto Pais(30%): AR$ {isDolarActive ? Math.round(price! * ImpuestoPais) : Math.round(price! * ImpuestoPais * CotizeDolar.oficial.value_buy)}
                 </h2>
 
-                <h2 className="text-xl text-black">
+                <h2 className="text-md text-black">
                     + Impuesto Ganancias(45%): AR$ {isDolarActive ? Math.round(price! * ImpuestoGanancias) : Math.round(price! * CotizeDolar.oficial.value_buy * ImpuestoGanancias)}
                 </h2>
 
                 {isDolarActive ? (
                     <h2
-                        className="text-xl text-black"
+                        className="text-md text-black"
                     >Total con Impuestos: AR$ {price! + price! * ImpuestoPais + price! * ImpuestoGanancias}</h2>
                 ) : (
                     <h2
-                        className="text-xl text-black"
+                        className="text-md text-black"
                     >
                         Total con Impuestos: AR$
                         {price! * CotizeDolar.oficial.value_buy + price! * CotizeDolar.oficial.value_buy * ImpuestoPais + price! * CotizeDolar.oficial.value_buy * ImpuestoGanancias}
