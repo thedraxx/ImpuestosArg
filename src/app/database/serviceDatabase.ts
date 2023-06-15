@@ -2,7 +2,13 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 import firebaseApp from '@/app/firebase/firebaseConfig';
 
 const dolarValue = async () => {
-    const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
+    const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest', 
+    {
+        next: {
+            revalidate: 86400,
+        }
+    }
+    )
     const data = await DolarValue.json()
     return data
   }

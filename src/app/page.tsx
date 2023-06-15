@@ -3,10 +3,12 @@ import Calculator from './components/Calculator/Calculator';
 import Link from 'next/link';
 
 const dolarValue = async () => {
-  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest', {
-
-  }
-
+  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest',
+    {
+      next: {
+        revalidate: 86400,
+      }
+    }
   )
   const data = await DolarValue.json()
   return data
