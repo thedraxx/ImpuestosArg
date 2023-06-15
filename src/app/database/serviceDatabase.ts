@@ -5,7 +5,7 @@ const dolarValue = async () => {
     const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest', 
     {
         next: {
-            revalidate: 86400,
+            revalidate: 3600,
         }
     }
     )
