@@ -3,7 +3,11 @@ import Calculator from './components/Calculator/Calculator';
 import Link from 'next/link';
 
 const dolarValue = async () => {
-  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest')
+  const DolarValue = await fetch('https://api.bluelytics.com.ar/v2/latest', {
+
+  }
+
+  )
   const data = await DolarValue.json()
   return data
 }
@@ -16,10 +20,22 @@ const HomePage = async () => {
         className='flex flex-col justify-center min-h-screen py-2 bg-black'
       >
         <div
-          className='flex  w-auto'
+          className='flex w-auto'
         >
-          <span className='type'>
-            Calculadora de impuestos digitales para Argentina.
+          <span className='type ml-2'>
+            Calculadora de {"\n"}
+            <br
+              className='block ml-5 mr-5 xl:hidden'
+            />
+            impuestos  {"\n"}
+            <br
+              className='block ml-5 mr-5 xl:hidden'
+            />
+            digitales {"\n"}
+            <br
+              className='block xl:hidden'
+            />
+            para Argentina.
           </span>
         </div>
 

@@ -11,7 +11,7 @@ const ServiceInfo = ({ item }: any) => {
         <>
             <div
                 key={item.id}
-                className='flex flex-1 flex-row justify-between items-center  w-96 h-96 '
+                className='flex flex-1 flex-row justify-between items-center h-96 sm:w-96  '
             >
                 <Image
                     src={item.image}
@@ -24,7 +24,7 @@ const ServiceInfo = ({ item }: any) => {
                     onClick={() => setisOpen(!isOpen)}
                 >
                     <h1
-                        className='text-2xl font-bold text-black text-center'
+                        className='text-2xl font-bold text-black text-center ml-5'
                     >
                         {
                             isOpen ? '-' : '+'
@@ -35,13 +35,13 @@ const ServiceInfo = ({ item }: any) => {
             {
                 isOpen ? (
                     <div
-                        className='flex flex-1 flex-col justify-between items-center w-96'
+                        className='flex flex-1 flex-col justify-between items-center sm:w-96 '
                     >
                         {
                             item.plans.map((plan: any) => {
                                 return (
                                     <div
-                                        className='flex flex-1 justify-between flex-row w-96'
+                                        className='flex flex-1 justify-between flex-row sm:w-96 '
                                         key={plan}
                                     >
                                         <PlansServices

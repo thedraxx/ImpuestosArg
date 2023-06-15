@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Calculadora de Impuetos Digitales - Argentina',
   description: 'Hola! Esta es una calculadora de impuestos digitales para Argentina.',
+  icons: {
+    icon: '/mate.ico',
+  },
 }
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/mate.ico" />
+        <link rel="icon" href='/mate.ico' />
       </head>
       <body className={inter.className}>
         <CustomPointer />
