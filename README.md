@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> Hello Everyone 🪐👋</h1>
 
-## Getting Started
+## 🤖 About App:
+This is a Frontend Taxes Calculator made in Next 13
 
-First, run the development server:
+## 🎥 A little video of the App:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/c5ab06aa-644b-4fca-ac1e-7114d3c41ddf
+
+![Screenshot_1](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/b292b309-317c-4481-9d64-28fa72606cc6)
+![2](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/f2198742-c381-46af-a243-383925a01515)
+![Screenshot_2](https://github.com/thedraxx/PersonalFlow-Challenge/assets/55867157/a68c83f4-7ae5-4201-bd3b-9d77ea178d83)
+
+<br> The app is made with the following technologies:</br>
+
 ```
+## ⚛️ React
+```
+ React: 18.2.0
+```
+## ⚛️ Next
+```
+React Native: 13.4.4
+```
+## ⚛️ Tailwind
+```
+styled-components: 3.3.2
+```
+## ✉️ Contact
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+gmail: frankdevarg@gmail.com
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🤔 Autor
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+👤 **Francisco Cerrano**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Twitter: [@thedraxxworld](https://twitter.com/ThedraxxWorld)
+- Github: [thedraxx](https://github.com/thedraxx)
+- LinkedIn: [Francisco Isaac Cerrano](https://www.linkedin.com/in/iscodev/)
